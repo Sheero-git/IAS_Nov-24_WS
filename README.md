@@ -8,17 +8,26 @@ Branches
 TurtleBot 3
 https://github.com/Sheero-git/IAS_Nov-24_WS/tree/Turtlebot_3
 
-To clone this branch:  git clone -b Turtlebot_3 https://github.com/Sheero-git/IAS_Nov-24_WS.git
+To clone this branch:  
+```
+git clone -b Turtlebot_3 https://github.com/Sheero-git/IAS_Nov-24_WS.git
+```
 
 Franka Emika Panda
 https://github.com/Sheero-git/IAS_Nov-24_WS/tree/Franka-Emica-Panda
 
-To clone this branch:  git clone -b Franka-Emica-Panda https://github.com/Sheero-git/IAS_Nov-24_WS.git
+To clone this branch:  
+```
+git clone -b Franka-Emica-Panda https://github.com/Sheero-git/IAS_Nov-24_WS.git
+```
 
 Robodog Go1
 https://github.com/Sheero-git/IAS_Nov-24_WS/tree/Robodog-Go1
 
-To clone this branch:   git clone -b Robodog-Go1 https://github.com/Sheero-git/IAS_Nov-24_WS.git
+To clone this branch:   
+```
+git clone -b Robodog-Go1 https://github.com/Sheero-git/IAS_Nov-24_WS.git
+```
 
 Documentation
 
