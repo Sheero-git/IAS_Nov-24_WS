@@ -47,12 +47,23 @@ sudo apt install ros-noetic-turtlebot3-msgs
 sudo apt install ros-noetic-turtlebot3
 ```
 ### 4.Launching the TurtleBot3 Gazebo Simulation
+```
+roslaunch turtlebot3_manipulation_gazebo turtlebot3_manipulation_gazebo.launch
 
+```
 ### 5.launch necessary .ssh files for naviagtion, manipulator and scenario
-# Navigation:
+```
+# Navigation using APF:
+
+roslaunch turtlebot_architecture Turtlecontrol1.launch"
 
 # Manipulator
+roslaunch turtlebot3_manipulation_moveit_config move_group.launch
+rosrun MiroSheesho MiroSheesho
 
 # Scenario:
 
+rosrun scenario Scenario.py
+
+```
 ## Hardware 
