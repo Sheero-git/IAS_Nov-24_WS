@@ -1,6 +1,6 @@
 # TurtleBot3
 
-## Installation
+## ROS Installation
 
 Follow the steps below to install ROS Noetic and the necessary packages for your project.
 
@@ -46,7 +46,13 @@ sudo apt install ros-noetic-turtlebot3-msgs
 # Install TurtleBot3 packages
 sudo apt install ros-noetic-turtlebot3
 ```
-### Launching the TurtleBot3 Gazebo Simulation
+### 4.Launching the TurtleBot3 Gazebo Simulation
 
+### 5.launch necessary .ssh files for naviagtion, manipulator and scenario
+# Navigation:
+
+# Manipulator
+
+# Scenario:
 
 ## Hardware 
