@@ -22,8 +22,9 @@ chmod 755 ./install_ros_noetic.sh
 
 # Run the installation script
 bash ./install_ros_noetic.sh
-
+```
 ### 2. Install Dependent ROS Packages
+```
 sudo apt-get install ros-noetic-joy ros-noetic-teleop-twist-joy \
   ros-noetic-teleop-twist-keyboard ros-noetic-laser-proc \
   ros-noetic-rgbd-launch ros-noetic-rosserial-arduino \
@@ -33,8 +34,9 @@ sudo apt-get install ros-noetic-joy ros-noetic-teleop-twist-joy \
   ros-noetic-compressed-image-transport ros-noetic-rqt* ros-noetic-rviz \
   ros-noetic-gmapping ros-noetic-navigation ros-noetic-interactive-markers
 ```
-### 3. Install Dependent ROS Packages
 
+### 3. Install Dependent ROS Packages
+```
 # Install Dynamixel SDK
 sudo apt install ros-noetic-dynamixel-sdk
 
@@ -43,7 +45,7 @@ sudo apt install ros-noetic-turtlebot3-msgs
 
 # Install TurtleBot3 packages
 sudo apt install ros-noetic-turtlebot3
-
+```
 ### Launching the TurtleBot3 Gazebo Simulation
 
 
