@@ -1,6 +1,6 @@
 IAS_Nov-24_WS
 
-his repository documents our work with three different robots—TurtleBot, Robodog Go1, and Franka Emika Panda—during the November 2024 workshop at the University of Stuttgart. We are students from the German University in Cairo, and this project showcases our work and collaboration on these robotic platforms.
+This repository documents our work with three different robots—TurtleBot, Robodog Go1, and Franka Emika Panda—during the November 2024 workshop at the University of Stuttgart. We are students from the German University in Cairo, and this project showcases our work and collaboration on these robotic platforms.
 
 To streamline development and documentation, the repository is divided into three separate branches, each dedicated to a specific robot. Each branch contains code, launch files, and detailed documentation for the respective robot's setup, nodes, and usage.
 Branches
