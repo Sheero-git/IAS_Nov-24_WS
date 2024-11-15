@@ -21,8 +21,9 @@ NOTE: Make sure your laptop has a speed of 1Gb/s for ethernet connections as els
 	(https://frankaemika.github.io/docs/installation_linux.html#setting-up-the-real-time-kernel)
 
 	## d. To verify that the new kernel is in fact a real-time kernel
+```
 		i. Reboot the system 
-                ``` sudo reboot ```
+                 sudo reboot 
 		ii. Press on "Advanced Options for Ubuntu" 
 		iii. Choose the downloaded real-time kernel (It should have a -rt extension)
 		iv. Execute the command in the terminal
