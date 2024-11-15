@@ -3,30 +3,31 @@
 import rospy
 from std_msgs.msg import Bool, String, Int32MultiArray
 
-# Global variable for phase
 phase = 1
-sent = False
+goal_Reached = False
+object_done = False
 
 # Callback function for the /path_flag topic
 def goal_flag_callback(msg):
-    global phase
-    global sent
+    global goal_Reached
     rospy.loginfo(f"Received flag from GoalSender: {msg.data}")
-    if msg.data:
-        # Move On to next phase
-        phase+=1
-        sent=False
-        
+    if msg.data and not object_done:
+        #Publish a String command to manipulator
+        order = "Pickup" if phase == 1 else "Place"
+        rospy.loginfo(f"Publishing order to manipulator: {order}")
+        manipulator_signal.publish(order)
+        goal_Reached = True
 
 # Callback function for the /manipulator_flag topic
 def manipulator_flag_callback(msg):
     global phase
-    global sent
+    global object_done
     rospy.loginfo(f"Received flag from manipulator: {msg.data}")
     if msg.data:
-        phase+=1
-        sent=False
-        
+        object_done = True
+        x=0
+        y=0
+        angle=0
 
 # Function to publish coordinates to the /coordinates topic
 def publish_coordinates(x, y, z):
@@ -38,7 +39,6 @@ def publish_coordinates(x, y, z):
 if __name__ == '__main__':
     try:
         # Initialize the ROS node
-
         rospy.init_node('bot', anonymous=True)
         rate = rospy.Rate(5)  # Set the publishing rate to 5 Hz
 
@@ -51,24 +51,23 @@ if __name__ == '__main__':
         manipulator_flag = rospy.Subscriber('/manipulator_flag', Bool, manipulator_flag_callback)
 
         # Publish initial coordinates for testing
-        rospy.loginfo("Node initialized.")
-        while(not rospy.is_shutdown()):
-            if(phase==1):
-                publish_coordinates(3, 3, 0)
-            elif(phase==2 and not sent):
-                order = "Pickup"
-                rospy.loginfo(f"Publishing order to manipulator: {order}")
-                manipulator_signal.publish(order)
-                sent=True
-            elif(phase==3):
-                publish_coordinates(0, 0, 0)
-            elif(phase==4 and not sent):
-                order = "Place"
-                rospy.loginfo(f"Publishing order to manipulator: {order}")
-                manipulator_signal.publish(order)
-                sent=True
-            rospy.loginfo(f"Phase is: {phase}")
+        rospy.loginfo("Node initialized. Publishing initial coordinates.")
+        x=3
+        y=3
+        angle = 0
+
+        while not rospy.is_shutdown():
+            publish_coordinates(x, y, angle)
             rate.sleep()
+        #Publish a String command to manipulator
+        #order = "Place"
+        #rospy.loginfo(f"Publishing order to manipulator: {order}")
+        #manipulator_signal.publish(order)
+
+
+        # Keep the node running
+        rospy.spin()
+
     except rospy.ROSInterruptException:
         rospy.loginfo("Node terminated.")
 

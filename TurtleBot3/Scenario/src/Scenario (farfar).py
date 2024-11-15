@@ -6,16 +6,19 @@ from std_msgs.msg import Bool, String, Int32MultiArray
 # Global variable for phase
 phase = 1
 sent = False
+reached_once = False
 
 # Callback function for the /path_flag topic
 def goal_flag_callback(msg):
-    global phase
+    global phase ,reached_once
     global sent
     rospy.loginfo(f"Received flag from GoalSender: {msg.data}")
-    if msg.data:
+    rospy.loginfo(f"reached flag: {reached_once}")
+    if msg.data and not reached_once:
         # Move On to next phase
         phase+=1
         sent=False
+        reached_once=True
         
 
 # Callback function for the /manipulator_flag topic
@@ -37,7 +40,7 @@ def publish_coordinates(x, y, z):
 
 if __name__ == '__main__':
     try:
-        # Initialize the ROS node
+        # Initialize the ROS node                reached_once=False
 
         rospy.init_node('bot', anonymous=True)
         rate = rospy.Rate(5)  # Set the publishing rate to 5 Hz
@@ -56,6 +59,7 @@ if __name__ == '__main__':
             if(phase==1):
                 publish_coordinates(3, 3, 0)
             elif(phase==2 and not sent):
+                reached_once=False
                 order = "Pickup"
                 rospy.loginfo(f"Publishing order to manipulator: {order}")
                 manipulator_signal.publish(order)
