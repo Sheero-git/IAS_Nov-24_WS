@@ -6,7 +6,7 @@ Official online documentation of turtlebot 3: https://emanual.robotis.com/docs/e
 
 Follow the steps below to install ROS Noetic and the necessary packages for your project.
 
-### 1. Install ROS Noetic --test
+### 1. Install ROS Noetic
 
 Open a terminal (Ctrl+Alt+T) and enter the following commands one by one:
 ```
