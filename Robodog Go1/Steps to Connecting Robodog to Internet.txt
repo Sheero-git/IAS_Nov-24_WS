@@ -1,4 +1,9 @@
-sudo systemctl status wpa_supplicant@wlan0
+Connect to Robodog's Wifi "UNITREE"
+
+ssh pi@192.168.12.1 , Password: 123
+ 
+#sudo systemctl status wpa_supplicant@wlan0 (additional to check status)
+
 sudo systemctl start wpa_supplicant@wlan0
 dmesg | grep wlan0
 sudo ifconfig wlan0 up
