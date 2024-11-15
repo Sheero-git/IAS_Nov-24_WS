@@ -1,0 +1,48 @@
+To RUN MANIPULATOR OF ROBODOG
+roslaunch open_manipulator_controller open_manipulator_controller.launch 
+roslaunch open_manipulator_gazebo open_manipulator_gazebo.launch
+rostopic pub /open_manipulator/joint1_position/command std_msgs/Float64 "data: 1"
+
+
+SIMULATION
+1. Upload (roslaunch turtlebot3_manipulation_description turtlebot3_manipulation_upload.launch )
+2. Move it controller ( roslaunch turtlebot3_manipulation_moveit_config move_group.launch )
+3. launch gazebo ( roslaunch turtlebot3_manipulation_gazebo turtlebot3_manipulation_gazebo.launch  )
+4. Launch gui
+
+
+EXPERIMENTAL
+- roscore on laptop
+1. Bringup on pi (roslaunch turtlebot3_bringup turtlebot3_robot.launch)
+2. Upload on pc (roslaunch turtlebot3_manipulation_description turtlebot3_manipulation_upload.launch )
+3. Bring up manipulator on pc (roslaunch turtlebot3_manipulation_bringup turtlebot3_manipulation_bringup.launch)
+4. Move it controller ( roslaunch turtlebot3_manipulation_moveit_config move_group.launch )
+or use GUI (roslaunch turtlebot3_manipulation_gui turtlebot3_manipulation_gui.launch  )
+5. Gui or our own python script (utilizing task space) (rosrun MiroSheesho MiroSheesho)
+
+
+Open Manipulator
+roslaunch open_manipulator_controller open_manipulator_controller.launch use_moveit:=false use_platform:=false
+(use platform is true if actual, false if simulatiion)
+roslaunch open_manipulator_controller open_manipulator_controller.launch use_platform:=true
+rostopic pub /option std_msgs/String "print_open_manipulator_setting" to check setting
+roslaunch open_manipulator_description open_manipulator_rviz.launch (to load on rviz?)
+roslaunch open_manipulator_description open_manipulator_rviz.launch use_gui:=true
+
+roslaunch open_manipulator_controllers joint_trajectory_controller.launch sim:=false (To launch move it)
+roslaunch open_manipulator_controllers joint_trajectory_controller.launch (with gazebo)
+
+roslaunch open_manipulator_control_gui open_manipulator_control_gui.launch (gui)
+
+
+roslaunch open_manipulator_gazebo open_manipulator_gazebo.launch
+roslaunch open_manipulator_control_gui open_manipulator_control_gui.launch (control gui)
+
+
+
+-- Commands to run manipulator
+- Open Manipulator 
+
+
+
+
