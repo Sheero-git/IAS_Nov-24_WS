@@ -27,7 +27,7 @@ NOTE: Make sure your laptop has a speed of 1Gb/s for ethernet connections as els
 		ii. Press on "Advanced Options for Ubuntu" 
 		iii. Choose the downloaded real-time kernel (It should have a -rt extension)
 		iv. Execute the command in the terminal
-        ''' uname -a '''
+         uname -a 
 		v. The string "PREEMPT-RT" should appear as a result
 ```
 	NOTE: If the string "PREEMPT-RT" does not appear, then your kernel is not a real-time kernel and hence, you must repeat Steps (2. c-d) or preferably repeat Step 2.
