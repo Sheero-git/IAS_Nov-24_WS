@@ -1,5 +1,5 @@
 Connect to Robodog's Wifi "UNITREE"
-
+clone https://github.com/unitreerobotics/unitree_ros_to_real.git and follow steps.
 ssh pi@192.168.12.1 , Password: 123
  
 #sudo systemctl status wpa_supplicant@wlan0 (additional to check status)

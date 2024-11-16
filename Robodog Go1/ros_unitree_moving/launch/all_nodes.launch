@@ -1,0 +1,11 @@
+<launch>
+    <!-- Launch Path Planning Node -->
+    <node pkg="ros_unitree_moving" type="PathPlanning_odom.py" name="path_planning_node" output="screen" />
+
+    <!-- Launch Move Robot Node -->
+    <node pkg="ros_unitree_moving" type="move_robot_odom.py" name="move_robot_node" output="screen" />
+
+    <!-- Launch Obstacles Node -->
+    <node pkg="ros_unitree_moving" type="obstacles.py" name="obstacles_node" output="screen" />
+</launch>
+
