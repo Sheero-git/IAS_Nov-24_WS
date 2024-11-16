@@ -99,6 +99,3 @@ Publish a goal (example):
 ```bash
 rostopic pub /move_robot/goal geometry_msgs/Point "x: 3.0 y: 4.0 z: 0.0"
 ```
-
-Clone 
-
