@@ -26,11 +26,11 @@ This documentation provides a complete guide for setting up, simulating, and ope
 
 ---
 
-## Turtlebot3 ROS Packages Installation
+## Turtlebot3 Packages Installation and Setup
 
 Before installing the Turtlebot3 related packages, make sure that ROS Noetic is already installed.
 
-### Turtlebot3 Packages
+### 1. Turtlebot3 ROS Packages Installation
 
 ```bash
 sudo apt install ros-noetic-dynamixel-sdk
@@ -52,6 +52,8 @@ git clone -b Turtlebot_3 https://github.com/Sheero-git/IAS_Nov-24_WS.git
 ````bash
 catkin_make
 ````
+### 2. Turtlebot3 Setup
+
 
 ## Launching the TurtleBot3 Gazebo Simulation
 
