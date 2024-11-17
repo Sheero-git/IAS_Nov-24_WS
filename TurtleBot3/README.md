@@ -1,3 +1,4 @@
+
 # TurtleBot3 Documentation
 
 This documentation provides a complete guide for setting up, simulating, and operating TurtleBot3. It includes the installation of necessary software, simulation and hardware configuration, and troubleshooting common issues. This guide consolidates information from official TurtleBot3 resources and additional insights to ensure a thorough understanding and efficient execution of projects.
@@ -26,58 +27,66 @@ This documentation provides a complete guide for setting up, simulating, and ope
 
 ## ROS Installation
 
+Follow the steps below to install ROS Noetic and the necessary packages for your project.
+
 ### 1. Install ROS Noetic
-Follow these steps to install ROS Noetic on your system:
 
-```bash
-# Update and upgrade package list
-sudo apt update
-sudo apt upgrade
+Open a terminal (Ctrl+Alt+T) and enter the following commands one by one:
 
-# Download the ROS Noetic installation script
-wget https://raw.githubusercontent.com/ROBOTIS-GIT/robotis_tools/master/install_ros_noetic.sh
+Update the package list
+``sudo apt update``
 
-# Set executable permissions and run the script
-chmod 755 ./install_ros_noetic.sh
-bash ./install_ros_noetic.sh
+Upgrade installed packages
+``sudo apt upgrade``
 
-2. Install Dependent ROS Packages
-Run the following commands to install the necessary ROS packages:
+Download the ROS Noetic installation script
+``wget https://raw.githubusercontent.com/ROBOTIS-GIT/robotis_tools/master/install_ros_noetic.sh``
 
-# General dependencies
-sudo apt-get install ros-noetic-joy ros-noetic-teleop-twist-joy \
+Set executable permissions for the script
+``chmod 755 ./install_ros_noetic.sh``
+
+Run the installation script
+``bash ./install_ros_noetic.sh``
+
+### 2. Install Dependent ROS Packages
+
+``sudo apt-get install ros-noetic-joy ros-noetic-teleop-twist-joy \
   ros-noetic-teleop-twist-keyboard ros-noetic-laser-proc \
   ros-noetic-rgbd-launch ros-noetic-rosserial-arduino \
   ros-noetic-rosserial-python ros-noetic-rosserial-client \
   ros-noetic-rosserial-msgs ros-noetic-amcl ros-noetic-map-server \
   ros-noetic-move-base ros-noetic-urdf ros-noetic-xacro \
   ros-noetic-compressed-image-transport ros-noetic-rqt* ros-noetic-rviz \
-  ros-noetic-gmapping ros-noetic-navigation ros-noetic-interactive-markers
+  ros-noetic-gmapping ros-noetic-navigation ros-noetic-interactive-markers``
 
-# TurtleBot-specific dependencies
-sudo apt install ros-noetic-dynamixel-sdk
-sudo apt install ros-noetic-turtlebot3-msgs
-sudo apt install ros-noetic-turtlebot3
+## Turtlebot3 Packages Installation
 
-## Simulation Setup
+``sudo apt install ros-noetic-dynamixel-sdk``
+``sudo apt install ros-noetic-turtlebot3-msgs``
+``sudo apt install ros-noetic-turtlebot3``
+``git clone -b Turtlebot_3 https://github.com/Sheero-git/IAS_Nov-24_WS.git``
 
-### 1. Launching the TurtleBot3 Gazebo Simulation
-Use the following command to launch the Gazebo simulation:
-```bash
-roslaunch turtlebot3_manipulation_gazebo turtlebot3_manipulation_gazebo.launch
+## Launching the TurtleBot3 Gazebo Simulation
 
-## Simulation Setup
+### 1. Load TurtleBot3 with OpenMANIPULATOR-X into Gazebo world
+``roslaunch turtlebot3_manipulation_gazebo turtlebot3_manipulation_gazebo.launch``
 
-### 2. Teleoperation
-- Teleoperation was successfully configured in the simulation environment for remote control.
+### 2. Load packages for navigation, manipulator and integration between them
+``roslaunch sim_turtle_bot my_launch_file.launch``
 
-### 3. SLAM and Navigation
-- SLAM and navigation functionality were verified in the simulation environment with full obstacle avoidance and map generation.
+### 3. Click start button down in gazebo
 
-### 4. Manipulation in Gazebo
-- Manipulation tasks were tested in Gazebo with the following considerations:
-  - **Issue:** RViz sometimes fails or reports execution errors for long-distance manipulations.
-  - **Solution:** Additional checks in RViz state were performed to ensure consistency.
+
+## Moving actual TurtleBot
+
+### 1. [TurtleBot3 SBC] Run Bringup node for TurtleBot3
+`` roslaunch turtlebot3_bringup turtlebot3_robot.launch`` 
+
+### 2. [Remote PC]  Run Bringup node for OpenMANIPULATOR on TurtleBot3
+``roslaunch turtlebot3_manipulation_bringup turtlebot3_manipulation_bringup.launch``
+
+### 3. Load packages for navigation, manipulator and integration between them
+``roslaunch sim_turtle_bot my_launch_file.launch``
 
 ---
 
@@ -106,18 +115,16 @@ roslaunch turtlebot3_manipulation_gazebo turtlebot3_manipulation_gazebo.launch
 ## Launching Necessary Nodes for TurtleBot3
 
 ### Navigation:
-```bash
-roslaunch turtlebot_architecture Turtlecontrol1.launch
+``roslaunch turtlebot_architecture Turtlecontrol1.launch``
 
 ### Manipulator
-```bash
-roslaunch turtlebot3_manipulation_moveit_config move_group.launch
-rosrun MiroSheesho MiroSheesho
 
-## Scenario
+``roslaunch turtlebot3_manipulation_moveit_config move_group.launch
+rosrun MiroSheesho MiroSheesho``
 
-```bash
-rosrun scenario Scenario.py
+### Scenario
+
+``rosrun scenario Scenario.py``
 
 ## Troubleshooting
 
