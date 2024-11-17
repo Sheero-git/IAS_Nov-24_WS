@@ -107,7 +107,7 @@ ifconfig
 ````
 ##### 1.2 Get your ip address beside the inet addr in the wlp2s0 section
 
-#### 1.3 [Remote PC] SSH the Turtlebot Pi unsing it's IP Address (currently set to 192.168.0.123)
+#### 1.3 [Remote PC] SSH the Turtlebot Pi using it's IP Address (currently set to 192.168.0.123)
 ```bash
 ssh ubuntu@192.168.0.123
 ```
@@ -164,13 +164,13 @@ roslaunch sim_turtle_bot my_launch_file.launch
 
 ---
 
-## Hardware Setup
+## Further Explaination and Parameters Editing
 
 ### 1. SLAM on Hardware
 - SLAM was implemented in a pre-mapped environment, ensuring robust operation without the need for real-time mapping.
 
 ### 2. Navigation on Hardware
-- Hardware navigation parameters were tuned for optimal performance.
+- Hardware navigation parameters were tuned for optimal performance (Found in Node: src/turtlebot_architecture/APF.py).
 - Obstacle avoidance was verified and refined through extensive testing.
 
 ### 3. Manipulation on Hardware
