@@ -166,15 +166,17 @@ roslaunch sim_turtle_bot my_launch_file.launch
 
 ## Further Explaination and Parameters Editing
 
-### 1. SLAM on Hardware
+### 1. SLAM
 - SLAM was implemented in a pre-mapped environment, ensuring robust operation without the need for real-time mapping.
 
-### 2. Navigation on Hardware
-- Hardware navigation parameters were tuned for optimal performance (Found in Node: src/turtlebot_architecture/APF.py).
+### 2. Navigation
+- Hardware navigation parameters were tuned for optimal performance (Found in Node: src/turtlebot_architecture/src/APF.py).
 - Obstacle avoidance was verified and refined through extensive testing.
+- Goal Setup (src/scenario/src/Scenario.py)
 
 ### 3. Manipulation on Hardware
 - Manipulation setup utilized OpenCR for operational guidance.
+
 
 #### Key Challenges and Solutions:
 1. **Timing Discrepancies:**
