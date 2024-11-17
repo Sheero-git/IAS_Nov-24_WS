@@ -45,6 +45,7 @@ sudo apt install ros-noetic-turtlebot3
 ```
 
 ```bash
+cd ~/catkin_ws
 git clone -b Turtlebot_3 https://github.com/Sheero-git/IAS_Nov-24_WS.git
 ```
 
