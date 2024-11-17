@@ -91,6 +91,8 @@ roslaunch sim_turtle_bot my_launch_file.launch
 
 ### 3. Click start button down in gazebo (Play button)
 
+
+
 ## Moving actual TurtleBot
 
 ### 1. [Remote PC]  Run Ros
