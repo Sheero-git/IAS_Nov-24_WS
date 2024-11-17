@@ -21,7 +21,7 @@ This documentation provides a complete guide for setting up, simulating, and ope
 ### Key Tools and Dependencies
 - **Gazebo:** For simulation
 - **RViz:** For visualization
-- **SLAM packages:** For mapping and navigation
+- **APF package:** For navigation
 - **OpenCR:** For manipulator operations
 
 ---
