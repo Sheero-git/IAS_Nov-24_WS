@@ -37,7 +37,7 @@ Follow the steps below to install ROS Noetic and the necessary packages if not i
 
 ### 1. Install ROS Noetic
 
-Open a terminal (Ctrl+Alt+T) and enter the following commands one by one:
+Open a terminal (`Ctrl`+`Alt`+`T`) and enter the following commands one by one:
 
 Update the package list
 ```bash
@@ -87,4 +87,4 @@ Add the following commands at the end of the bashrc terminal
 source /opt/ros/noetic/setup.bash
 source ~/catkin_ws/devel/setup.bash
 ```
-save your edits in the bashrc (Ctrl+S), then exit this terminal (Ctrl+x)
+save your edits in the bashrc (`Ctrl`+`S`), then exit this terminal (`Ctrl`+`x`)
