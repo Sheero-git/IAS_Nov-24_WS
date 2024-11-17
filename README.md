@@ -70,7 +70,7 @@ nano ~/.bashrc
 export TURTLEBOT3_MODEL=waffle_pi
 export LDS_MODEL=LDS-02
 ````
-##### 3.3 Save the bashrc file using ctrl + S then exit using ctrl + X
+##### 3.3 Save the bashrc file using `ctrl` + `S` then exit using `ctrl` + `X`
 ##### 3.4 source the bashrc file
 ````bash
 source ~/.bashrc
