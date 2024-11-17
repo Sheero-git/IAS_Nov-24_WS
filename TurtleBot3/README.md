@@ -30,6 +30,8 @@ This documentation provides a complete guide for setting up, simulating, and ope
 
 Before installing the Turtlebot3 related packages, make sure that ROS Noetic is already installed.
 
+Open the terminal with Ctrl+Alt+T and enter below commands one at a time
+
 ### 1. Turtlebot3 ROS Packages Installation
 
 ```bash
@@ -120,7 +122,7 @@ roslaunch sim_turtle_bot my_launch_file.launch
 
 ---
 
-## Launching Necessary Nodes for TurtleBot3
+## [Optional] Launching TurtleBot nodes separately 
 
 ### Navigation:
 ```bash
