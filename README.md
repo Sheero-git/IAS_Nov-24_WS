@@ -174,8 +174,9 @@ roslaunch sim_turtle_bot my_launch_file.launch
 - Obstacle avoidance was verified and refined through extensive testing.
 - Goal Setup (src/scenario/src/Scenario.py)
 
-### 3. Manipulation on Hardware
+### 3. Manipulation
 - Manipulation setup utilized OpenCR for operational guidance.
+- Pickup and Place joint angles Setup (src/turtlebot3_manipulation/MiroSheesho/src/test.cpp)
 
 
 #### Key Challenges and Solutions:
