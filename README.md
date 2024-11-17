@@ -92,13 +92,13 @@ c. Follow the "Install librealsense2" instructions with one exceptions to make s
 
 d. Follow the "Building librealsense2 SDK" instructions exactly with one exception
 		ii. Exception: Replace the final command
-
+```
 sudo make uninstall && make clean && make && sudo make install
-
+```
 with the following command
-
+```
 sudo make uninstall && make clean && make && sudo make -j$(($(nproc)-1)) install
-
+```
 if your CPU has more than one core to allow for parallel compilation.
 
 * NOTE: After executing Steps 5-6, you can execute the command "roslaunch realsense2_camera rs_camera.launch" to make sure that the camera real-sense device is detected and works
