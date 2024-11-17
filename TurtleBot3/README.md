@@ -69,8 +69,7 @@ roslaunch turtlebot3_manipulation_gazebo turtlebot3_manipulation_gazebo.launch
 roslaunch sim_turtle_bot my_launch_file.launch
 ```
 
-### 3. Click start button down in gazebo
-
+### 3. Click start button down in gazebo (Play button)
 
 ## Moving actual TurtleBot
 
@@ -83,17 +82,22 @@ ssh ubuntu@192.168.0.123
 turtlebot
 ```
 
-### 2. [TurtleBot3 SBC] Run Bringup node for TurtleBot3
+### 2. [Remote PC]  Run Ros
+```bash
+roscore
+```
+
+### 3. [TurtleBot3 SBC] Run Bringup node for TurtleBot3
 ```bash
 roslaunch turtlebot3_bringup turtlebot3_robot.launch
 ```
 
-### 3. [Remote PC]  Run Bringup node for OpenMANIPULATOR on TurtleBot3
+### 4. [Remote PC]  Run Bringup node for OpenMANIPULATOR on TurtleBot3
 ```bash
 roslaunch turtlebot3_manipulation_bringup turtlebot3_manipulation_bringup.launch
 ```
 
-### 4. Load packages for navigation, manipulator and integration between them
+### 5. Load packages for navigation, manipulator and integration between them
 ```bash
 roslaunch sim_turtle_bot my_launch_file.launch
 ```
