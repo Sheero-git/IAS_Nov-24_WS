@@ -30,7 +30,7 @@ This documentation provides a complete guide for setting up, simulating, and ope
 
 Before installing the Turtlebot3 related packages, make sure that ROS Noetic is already installed.
 
-### Turtlebot3 Packages Installation
+### Turtlebot3 Packages
 
 ```bash
 sudo apt install ros-noetic-dynamixel-sdk
