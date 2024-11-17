@@ -97,7 +97,7 @@ roslaunch sim_turtle_bot my_launch_file.launch
 roslaunch turtlebot3_manipulation_gui turtlebot3_manipulation_gui.launch
 ```
 
-## Moving actual TurtleBot (Hardware)
+## Moving actual TurtleBot (Hardware): Master PC Setup
 
 ### 1. Setup the master on the Turtlebot (done only once)
 
