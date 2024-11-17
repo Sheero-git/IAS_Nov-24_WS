@@ -106,17 +106,26 @@ roslaunch sim_turtle_bot my_launch_file.launch
 
 ## Moving actual TurtleBot
 
-### 1. [TurtleBot3 SBC] Run Bringup node for TurtleBot3
+### 1. [Remote PC] SSH the Turtlebot Pi unsing it's IP Address (currently set to 192.168.0.123
+```bash
+ssh ubuntu@192.168.0.123
+```
+#### 1.1 Enter the password
+```bash
+turtlebot
+```
+
+### 2. [TurtleBot3 SBC] Run Bringup node for TurtleBot3
 ```bash
 roslaunch turtlebot3_bringup turtlebot3_robot.launch
 ```
 
-### 2. [Remote PC]  Run Bringup node for OpenMANIPULATOR on TurtleBot3
+### 3. [Remote PC]  Run Bringup node for OpenMANIPULATOR on TurtleBot3
 ```bash
 roslaunch turtlebot3_manipulation_bringup turtlebot3_manipulation_bringup.launch
 ```
 
-### 3. Load packages for navigation, manipulator and integration between them
+### 4. Load packages for navigation, manipulator and integration between them
 ```bash
 roslaunch sim_turtle_bot my_launch_file.launch
 ```
