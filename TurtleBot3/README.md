@@ -11,6 +11,7 @@ This documentation provides a complete guide for setting up, simulating, and ope
 - Teleoperation
 - SLAM and navigation
 - Manipulation in Gazebo simulation
+- Visualization through RViz simulator
 
 ### Hardware Setup
 - SLAM implementation in a pre-mapped environment
