@@ -34,48 +34,72 @@ Follow the steps below to install ROS Noetic and the necessary packages for your
 Open a terminal (Ctrl+Alt+T) and enter the following commands one by one:
 
 Update the package list
-``sudo apt update``
+```bash
+sudo apt update
+```
 
 Upgrade installed packages
-``sudo apt upgrade``
+```bash
+sudo apt upgrade
+```
 
 Download the ROS Noetic installation script
-``wget https://raw.githubusercontent.com/ROBOTIS-GIT/robotis_tools/master/install_ros_noetic.sh``
+```bash
+wget https://raw.githubusercontent.com/ROBOTIS-GIT/robotis_tools/master/install_ros_noetic.sh
+```
 
 Set executable permissions for the script
-``chmod 755 ./install_ros_noetic.sh``
+```bash
+chmod 755 ./install_ros_noetic.sh
+```
 
 Run the installation script
-``bash ./install_ros_noetic.sh``
+```bash
+bash ./install_ros_noetic.sh
+```
 
 ### 2. Install Dependent ROS Packages
 
-``sudo apt-get install ros-noetic-joy ros-noetic-teleop-twist-joy \
+```bash
+sudo apt-get install ros-noetic-joy ros-noetic-teleop-twist-joy \
   ros-noetic-teleop-twist-keyboard ros-noetic-laser-proc \
   ros-noetic-rgbd-launch ros-noetic-rosserial-arduino \
   ros-noetic-rosserial-python ros-noetic-rosserial-client \
   ros-noetic-rosserial-msgs ros-noetic-amcl ros-noetic-map-server \
   ros-noetic-move-base ros-noetic-urdf ros-noetic-xacro \
   ros-noetic-compressed-image-transport ros-noetic-rqt* ros-noetic-rviz \
-  ros-noetic-gmapping ros-noetic-navigation ros-noetic-interactive-markers``
+  ros-noetic-gmapping ros-noetic-navigation ros-noetic-interactive-markers
+```
 
 ## Turtlebot3 Packages Installation
 
-``sudo apt install ros-noetic-dynamixel-sdk``
+```bash
+sudo apt install ros-noetic-dynamixel-sdk
+```
 
-``sudo apt install ros-noetic-turtlebot3-msgs``
+```bash
+sudo apt install ros-noetic-turtlebot3-msgs
+```
 
-``sudo apt install ros-noetic-turtlebot3``
+```bash
+sudo apt install ros-noetic-turtlebot3
+```
 
-``git clone -b Turtlebot_3 https://github.com/Sheero-git/IAS_Nov-24_WS.git``
+```bash
+git clone -b Turtlebot_3 https://github.com/Sheero-git/IAS_Nov-24_WS.git
+```
 
 ## Launching the TurtleBot3 Gazebo Simulation
 
 ### 1. Load TurtleBot3 with OpenMANIPULATOR-X into Gazebo world
-``roslaunch turtlebot3_manipulation_gazebo turtlebot3_manipulation_gazebo.launch``
+```bash
+roslaunch turtlebot3_manipulation_gazebo turtlebot3_manipulation_gazebo.launch
+```
 
 ### 2. Load packages for navigation, manipulator and integration between them
-``roslaunch sim_turtle_bot my_launch_file.launch``
+```bash
+roslaunch sim_turtle_bot my_launch_file.launch
+```
 
 ### 3. Click start button down in gazebo
 
@@ -83,13 +107,19 @@ Run the installation script
 ## Moving actual TurtleBot
 
 ### 1. [TurtleBot3 SBC] Run Bringup node for TurtleBot3
-`` roslaunch turtlebot3_bringup turtlebot3_robot.launch`` 
+```bash
+roslaunch turtlebot3_bringup turtlebot3_robot.launch
+```
 
 ### 2. [Remote PC]  Run Bringup node for OpenMANIPULATOR on TurtleBot3
-``roslaunch turtlebot3_manipulation_bringup turtlebot3_manipulation_bringup.launch``
+```bash
+roslaunch turtlebot3_manipulation_bringup turtlebot3_manipulation_bringup.launch
+```
 
 ### 3. Load packages for navigation, manipulator and integration between them
-``roslaunch sim_turtle_bot my_launch_file.launch``
+```bash
+roslaunch sim_turtle_bot my_launch_file.launch
+```
 
 ---
 
@@ -118,16 +148,22 @@ Run the installation script
 ## Launching Necessary Nodes for TurtleBot3
 
 ### Navigation:
-``roslaunch turtlebot_architecture Turtlecontrol1.launch``
+```bash
+roslaunch turtlebot_architecture Turtlecontrol1.launch
+```
 
 ### Manipulator
 
-``roslaunch turtlebot3_manipulation_moveit_config move_group.launch
-rosrun MiroSheesho MiroSheesho``
+```bash
+roslaunch turtlebot3_manipulation_moveit_config move_group.launch
+rosrun MiroSheesho MiroSheesho
+```
 
 ### Scenario
 
-``rosrun scenario Scenario.py``
+```bash
+rosrun scenario Scenario.py
+```
 
 ## Troubleshooting
 
