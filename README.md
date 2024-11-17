@@ -76,3 +76,14 @@ sudo apt-get install ros-noetic-joy ros-noetic-teleop-twist-joy \
   ros-noetic-compressed-image-transport ros-noetic-rqt* ros-noetic-rviz \
   ros-noetic-gmapping ros-noetic-navigation ros-noetic-interactive-markers
 ```
+### 3. ROS Sourcing 
+In order to make ROS Source as a default, Open your bashrc 
+
+```bash
+nano ~/.bashrc
+```
+Add the following commands at the end of the bashrc terminal
+```bash
+source /opt/ros/noetic/setup.bash
+source ~/catkin_ws/devel/setup.bash
+```
