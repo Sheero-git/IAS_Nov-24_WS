@@ -46,6 +46,8 @@ sudo apt install ros-noetic-turtlebot3-msgs
 sudo apt install ros-noetic-turtlebot3
 ```
 
+### 2. Turtlebot3 Setup
+
 ```bash
 cd ~/catkin_ws
 git clone -b Turtlebot_3 https://github.com/Sheero-git/IAS_Nov-24_WS.git
@@ -54,8 +56,6 @@ git clone -b Turtlebot_3 https://github.com/Sheero-git/IAS_Nov-24_WS.git
 ````bash
 catkin_make
 ````
-### 2. Turtlebot3 Setup
-
 
 ## Launching the TurtleBot3 Gazebo Simulation
 
