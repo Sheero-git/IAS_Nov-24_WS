@@ -62,8 +62,11 @@ Run the installation script
 ## Turtlebot3 Packages Installation
 
 ``sudo apt install ros-noetic-dynamixel-sdk``
+
 ``sudo apt install ros-noetic-turtlebot3-msgs``
+
 ``sudo apt install ros-noetic-turtlebot3``
+
 ``git clone -b Turtlebot_3 https://github.com/Sheero-git/IAS_Nov-24_WS.git``
 
 ## Launching the TurtleBot3 Gazebo Simulation
