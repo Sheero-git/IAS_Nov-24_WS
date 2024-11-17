@@ -107,7 +107,7 @@ roslaunch sim_turtle_bot my_launch_file.launch
 
 ## Moving actual TurtleBot
 
-### 1. [Remote PC] SSH the Turtlebot Pi unsing it's IP Address (currently set to 192.168.0.123
+### 1. [Remote PC] SSH the Turtlebot Pi unsing it's IP Address (currently set to 192.168.0.123)
 ```bash
 ssh ubuntu@192.168.0.123
 ```
