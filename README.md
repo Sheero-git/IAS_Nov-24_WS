@@ -91,7 +91,10 @@ roslaunch sim_turtle_bot my_launch_file.launch
 
 ### 3. Click start button down in gazebo (Play button)
 
-
+### 4. (Optional) To control the manipulator through the default gazebo gui 
+```bash
+roslaunch turtlebot3_manipulation_gui turtlebot3_manipulation_gui.launch
+```
 
 ## Moving actual TurtleBot
 
