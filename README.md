@@ -48,14 +48,34 @@ sudo apt install ros-noetic-turtlebot3
 
 ### 2. Turtlebot3 Setup
 
+#### 1. Clone this Git Repository
 ```bash
 cd ~/catkin_ws
 git clone -b Turtlebot_3 https://github.com/Sheero-git/IAS_Nov-24_WS.git
 ```
 
+#### 2. Build the Ros Environment using catkin make
 ````bash
 catkin_make
 ````
+
+#### 3. Change the bashrc file to include the correct Turtlebot model & Lidar model
+##### 3.1 open the bashrc file
+````bash
+cd
+nano ~/.bashrc
+````
+##### 3.2 Add these export lines to the bottom of the file
+````bash
+export TURTLEBOT3_MODEL=waffle_pi
+export LDS_MODEL=LDS-02
+````
+##### 3.3 Save the bashrc file using ctrl + S then exit using ctrl + X
+##### 3.4 source the bashrc file
+````bash
+source ~/.bashrc
+````
+   
 
 ## Launching the TurtleBot3 Gazebo Simulation
 
@@ -73,18 +93,18 @@ roslaunch sim_turtle_bot my_launch_file.launch
 
 ## Moving actual TurtleBot
 
-### 1. [Remote PC] SSH the Turtlebot Pi unsing it's IP Address (currently set to 192.168.0.123)
+### 1. [Remote PC]  Run Ros
+```bash
+roscore
+```
+
+### 2. [Remote PC] SSH the Turtlebot Pi unsing it's IP Address (currently set to 192.168.0.123)
 ```bash
 ssh ubuntu@192.168.0.123
 ```
-#### 1.1 Enter the password
+#### 2.1 Enter the password
 ```bash
 turtlebot
-```
-
-### 2. [Remote PC]  Run Ros
-```bash
-roscore
 ```
 
 ### 3. [TurtleBot3 SBC] Run Bringup node for TurtleBot3
