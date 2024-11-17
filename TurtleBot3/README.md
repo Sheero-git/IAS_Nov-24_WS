@@ -1,32 +1,50 @@
 # TurtleBot3 Documentation
 
-Official online documentation of turtlebot 3: https://emanual.robotis.com/docs/en/platform/turtlebot3/overview/
+This documentation provides a complete guide for setting up, simulating, and operating TurtleBot3. It includes the installation of necessary software, simulation and hardware configuration, and troubleshooting common issues. This guide consolidates information from official TurtleBot3 resources and additional insights to ensure a thorough understanding and efficient execution of projects.
+
+---
+
+## Overview
+
+### Simulation Setup
+- Teleoperation
+- SLAM and navigation
+- Manipulation in Gazebo simulation
+
+### Hardware Setup
+- SLAM implementation in a pre-mapped environment
+- Navigation hardware configuration and tuning
+- Manipulator setup and troubleshooting
+
+### Key Tools and Dependencies
+- **Gazebo:** For simulation
+- **RViz:** For visualization
+- **SLAM packages:** For mapping and navigation
+- **OpenCR:** For manipulator operations
+
+---
 
 ## ROS Installation
 
-Follow the steps below to install ROS Noetic and the necessary packages for your project.
-
 ### 1. Install ROS Noetic
+Follow these steps to install ROS Noetic on your system:
 
-Open a terminal (Ctrl+Alt+T) and enter the following commands one by one:
-```
-# Update the package list
+```bash
+# Update and upgrade package list
 sudo apt update
-
-# Upgrade installed packages
 sudo apt upgrade
 
 # Download the ROS Noetic installation script
 wget https://raw.githubusercontent.com/ROBOTIS-GIT/robotis_tools/master/install_ros_noetic.sh
 
-# Set executable permissions for the script
+# Set executable permissions and run the script
 chmod 755 ./install_ros_noetic.sh
-
-# Run the installation script
 bash ./install_ros_noetic.sh
-```
-### 2. Install Dependent ROS Packages
-```
+
+2. Install Dependent ROS Packages
+Run the following commands to install the necessary ROS packages:
+
+# General dependencies
 sudo apt-get install ros-noetic-joy ros-noetic-teleop-twist-joy \
   ros-noetic-teleop-twist-keyboard ros-noetic-laser-proc \
   ros-noetic-rgbd-launch ros-noetic-rosserial-arduino \
@@ -35,37 +53,97 @@ sudo apt-get install ros-noetic-joy ros-noetic-teleop-twist-joy \
   ros-noetic-move-base ros-noetic-urdf ros-noetic-xacro \
   ros-noetic-compressed-image-transport ros-noetic-rqt* ros-noetic-rviz \
   ros-noetic-gmapping ros-noetic-navigation ros-noetic-interactive-markers
-```
 
-### 3. Install Dependent ROS Packages
-```
-# Install Dynamixel SDK
+# TurtleBot-specific dependencies
 sudo apt install ros-noetic-dynamixel-sdk
-
-# Install TurtleBot3 message packages
 sudo apt install ros-noetic-turtlebot3-msgs
-
-# Install TurtleBot3 packages
 sudo apt install ros-noetic-turtlebot3
-```
-### 4.Launching the TurtleBot3 Gazebo Simulation
-```
+
+## Simulation Setup
+
+### 1. Launching the TurtleBot3 Gazebo Simulation
+Use the following command to launch the Gazebo simulation:
+```bash
 roslaunch turtlebot3_manipulation_gazebo turtlebot3_manipulation_gazebo.launch
 
-```
-### 5.launch necessary .ssh files for naviagtion, manipulator and scenario
-```
-# Navigation using APF:
+## Simulation Setup
 
-roslaunch turtlebot_architecture Turtlecontrol1.launch"
+### 2. Teleoperation
+- Teleoperation was successfully configured in the simulation environment for remote control.
 
-# Manipulator
+### 3. SLAM and Navigation
+- SLAM and navigation functionality were verified in the simulation environment with full obstacle avoidance and map generation.
+
+### 4. Manipulation in Gazebo
+- Manipulation tasks were tested in Gazebo with the following considerations:
+  - **Issue:** RViz sometimes fails or reports execution errors for long-distance manipulations.
+  - **Solution:** Additional checks in RViz state were performed to ensure consistency.
+
+---
+
+## Hardware Setup
+
+### 1. SLAM on Hardware
+- SLAM was implemented in a pre-mapped environment, ensuring robust operation without the need for real-time mapping.
+
+### 2. Navigation on Hardware
+- Hardware navigation parameters were tuned for optimal performance.
+- Obstacle avoidance was verified and refined through extensive testing.
+
+### 3. Manipulation on Hardware
+- Manipulation setup utilized OpenCR for operational guidance.
+
+#### Key Challenges and Solutions:
+1. **Timing Discrepancies:**
+   - System clock mismatches between the TurtleBot's Raspberry Pi and the remote PC caused unrealistic time differences.
+   - **Solution:** Used `timedatectl` to align time zones and resolved time mismatch issues.
+
+2. **Command Abortion Errors:**
+   - Fixed by adjusting planning and execution time bounds to initialize proper states.
+
+---
+
+## Launching Necessary Nodes for TurtleBot3
+
+### Navigation:
+```bash
+roslaunch turtlebot_architecture Turtlecontrol1.launch
+
+### Manipulator
+```bash
 roslaunch turtlebot3_manipulation_moveit_config move_group.launch
 rosrun MiroSheesho MiroSheesho
 
-# Scenario:
+## Scenario
 
+```bash
 rosrun scenario Scenario.py
 
-```
-## Hardware 
+## Troubleshooting
+
+### 1. RViz vs. Gazebo Consistency
+- RViz outcomes cannot be assumed based solely on Gazebo simulation results.
+- Ensure separate validations for consistency.
+
+### 2. Time Synchronization
+- Manual synchronization was required using `timedatectl`.
+- Future automation with reliable tools is recommended.
+
+### 3. Initial State Management
+- Proper configuration of initial state parameters avoids command abortion errors.
+
+---
+
+## Lessons Learned
+
+- **Time Synchronization:** Accurate system clocks are critical for seamless hardware operations.
+- **Hardware Tuning:** Navigation and manipulation success depend heavily on precise parameter adjustments.
+- **Separate Validations:** RViz and Gazebo should be independently validated for reliability.
+
+---
+
+## Future Improvements
+
+1. Automate time synchronization to minimize manual intervention.
+2. Enhance RViz-Gazebo integration for improved manipulation outcomes.
+3. Expand testing scenarios for robustness in real-world applications.
