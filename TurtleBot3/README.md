@@ -49,6 +49,10 @@ cd ~/catkin_ws
 git clone -b Turtlebot_3 https://github.com/Sheero-git/IAS_Nov-24_WS.git
 ```
 
+````bash
+catkin_make
+````
+
 ## Launching the TurtleBot3 Gazebo Simulation
 
 ### 1. Load TurtleBot3 with OpenMANIPULATOR-X into Gazebo world
