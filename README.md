@@ -126,6 +126,12 @@ nano ~/.bashrc
 ````bash
 export ROS_MASTER_URI=http://${YOUR_IP_ADDRESS}:11311
 ````
+Save the bashrc file using (`ctrl` + `S`) then exit using (`ctrl` + `X`)
+
+##### 1.7 Source the bashrc file
+````bash
+source ~/.bashrc
+````
 
 ### 2. [Remote PC]  Run Ros
 ```bash
