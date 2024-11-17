@@ -97,9 +97,9 @@ roslaunch sim_turtle_bot my_launch_file.launch
 roslaunch turtlebot3_manipulation_gui turtlebot3_manipulation_gui.launch
 ```
 
-## Moving actual TurtleBot (Hardware): Master PC Setup
+## Moving actual TurtleBot (Hardware):
 
-### 1. Setup the master on the Turtlebot (done only once)
+### 1. Setup the master on the Turtlebot (Done Only Once)
 
 #### 1.1 Check your [Remote PC]'s ip adress using ifconfig
 ````bash
