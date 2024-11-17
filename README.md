@@ -87,3 +87,4 @@ Add the following commands at the end of the bashrc terminal
 source /opt/ros/noetic/setup.bash
 source ~/catkin_ws/devel/setup.bash
 ```
+save your edits in the bashrc (Ctrl+S), then exit this terminal (Ctrl+x)
