@@ -60,7 +60,7 @@ catkin_make
 ````
 
 #### 3. Change the bashrc file to include the correct Turtlebot model & Lidar model
-##### 3.1 open the bashrc file
+##### 3.1 Open the bashrc file
 ````bash
 cd
 nano ~/.bashrc
@@ -71,7 +71,8 @@ export TURTLEBOT3_MODEL=waffle_pi
 export LDS_MODEL=LDS-02
 ````
 Save the bashrc file using (`ctrl` + `S`) then exit using (`ctrl` + `X`)
-##### 3.3 source the bashrc file
+
+##### 3.3 Source the bashrc file
 ````bash
 source ~/.bashrc
 ````
@@ -97,6 +98,34 @@ roslaunch turtlebot3_manipulation_gui turtlebot3_manipulation_gui.launch
 ```
 
 ## Moving actual TurtleBot
+
+### 0. Setup the master on the Turtlebot (done only once)
+
+#### 0.1 Check your [Remote PC]'s ip adress using ifconfig
+````bash
+ifconfig
+````
+##### 0.2 Get your ip address beside the inet addr in the wlp2s0 section
+
+#### 0.3 [Remote PC] SSH the Turtlebot Pi unsing it's IP Address (currently set to 192.168.0.123)
+```bash
+ssh ubuntu@192.168.0.123
+```
+
+#### 0.4 Enter the password
+```bash
+turtlebot
+```
+#### 0.5 Open the bashrc file on the turtlebot
+````bash
+cd
+nano ~/.bashrc
+````
+
+#### 0.6 Change the ROS_MASTER_URI to be your [Remote PC]'s ip address
+````bash
+export ROS_MASTER_URI=http://${YOUR_IP_ADDRESS}:11311
+````
 
 ### 1. [Remote PC]  Run Ros
 ```bash
