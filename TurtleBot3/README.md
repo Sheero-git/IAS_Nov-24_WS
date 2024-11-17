@@ -26,51 +26,9 @@ This documentation provides a complete guide for setting up, simulating, and ope
 
 ---
 
-## ROS Installation
+## Turtlebot3 ROS Packages Installation
 
-Follow the steps below to install ROS Noetic and the necessary packages for your project.
-
-### 1. Install ROS Noetic
-
-Open a terminal (Ctrl+Alt+T) and enter the following commands one by one:
-
-Update the package list
-```bash
-sudo apt update
-```
-
-Upgrade installed packages
-```bash
-sudo apt upgrade
-```
-
-Download the ROS Noetic installation script
-```bash
-wget https://raw.githubusercontent.com/ROBOTIS-GIT/robotis_tools/master/install_ros_noetic.sh
-```
-
-Set executable permissions for the script
-```bash
-chmod 755 ./install_ros_noetic.sh
-```
-
-Run the installation script
-```bash
-bash ./install_ros_noetic.sh
-```
-
-### 2. Install Dependent ROS Packages
-
-```bash
-sudo apt-get install ros-noetic-joy ros-noetic-teleop-twist-joy \
-  ros-noetic-teleop-twist-keyboard ros-noetic-laser-proc \
-  ros-noetic-rgbd-launch ros-noetic-rosserial-arduino \
-  ros-noetic-rosserial-python ros-noetic-rosserial-client \
-  ros-noetic-rosserial-msgs ros-noetic-amcl ros-noetic-map-server \
-  ros-noetic-move-base ros-noetic-urdf ros-noetic-xacro \
-  ros-noetic-compressed-image-transport ros-noetic-rqt* ros-noetic-rviz \
-  ros-noetic-gmapping ros-noetic-navigation ros-noetic-interactive-markers
-```
+Before installing the Turtlebot3 related packages, make sure that ROS Noetic is already installed.
 
 ## Turtlebot3 Packages Installation
 
