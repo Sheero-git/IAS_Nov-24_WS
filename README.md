@@ -97,61 +97,61 @@ roslaunch sim_turtle_bot my_launch_file.launch
 roslaunch turtlebot3_manipulation_gui turtlebot3_manipulation_gui.launch
 ```
 
-## Moving actual TurtleBot
+## Moving actual TurtleBot (Hardware)
 
-### 0. Setup the master on the Turtlebot (done only once)
+### 1. Setup the master on the Turtlebot (done only once)
 
-#### 0.1 Check your [Remote PC]'s ip adress using ifconfig
+#### 1.1 Check your [Remote PC]'s ip adress using ifconfig
 ````bash
 ifconfig
 ````
-##### 0.2 Get your ip address beside the inet addr in the wlp2s0 section
+##### 1.2 Get your ip address beside the inet addr in the wlp2s0 section
 
-#### 0.3 [Remote PC] SSH the Turtlebot Pi unsing it's IP Address (currently set to 192.168.0.123)
+#### 1.3 [Remote PC] SSH the Turtlebot Pi unsing it's IP Address (currently set to 192.168.0.123)
 ```bash
 ssh ubuntu@192.168.0.123
 ```
 
-#### 0.4 Enter the password
+#### 1.4 Enter the password
 ```bash
 turtlebot
 ```
-#### 0.5 Open the bashrc file on the turtlebot
+#### 1.5 Open the bashrc file on the turtlebot
 ````bash
 cd
 nano ~/.bashrc
 ````
 
-#### 0.6 Change the ROS_MASTER_URI to be your [Remote PC]'s ip address
+#### 1.6 Change the ROS_MASTER_URI to be your [Remote PC]'s ip address
 ````bash
 export ROS_MASTER_URI=http://${YOUR_IP_ADDRESS}:11311
 ````
 
-### 1. [Remote PC]  Run Ros
+### 2. [Remote PC]  Run Ros
 ```bash
 roscore
 ```
 
-### 2. [Remote PC] SSH the Turtlebot Pi unsing it's IP Address (currently set to 192.168.0.123)
+### 3. [Remote PC] SSH the Turtlebot Pi unsing it's IP Address (currently set to 192.168.0.123)
 ```bash
 ssh ubuntu@192.168.0.123
 ```
-#### 2.1 Enter the password
+#### 3.1 Enter the password
 ```bash
 turtlebot
 ```
 
-### 3. [TurtleBot3 SBC] Run Bringup node for TurtleBot3
+### 4. [TurtleBot3 SBC] Run Bringup node for TurtleBot3
 ```bash
 roslaunch turtlebot3_bringup turtlebot3_robot.launch
 ```
 
-### 4. [Remote PC]  Run Bringup node for OpenMANIPULATOR on TurtleBot3
+### 5. [Remote PC]  Run Bringup node for OpenMANIPULATOR on TurtleBot3
 ```bash
 roslaunch turtlebot3_manipulation_bringup turtlebot3_manipulation_bringup.launch
 ```
 
-### 5. Load packages for navigation, manipulator and integration between them
+### 6. Load packages for navigation, manipulator and integration between them
 ```bash
 roslaunch sim_turtle_bot my_launch_file.launch
 ```
