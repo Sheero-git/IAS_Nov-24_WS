@@ -47,11 +47,12 @@ v. The string "PREEMPT-RT" should appear as a result
 
 # 3. Clone the GitHub repo into the source folder  (.src)  of your catkin workspace to use University of Stuttgart's hardware abstraction layer for the Franka Emika Panda
 ```
-git clone https://github.tik.uni-stuttgart.de/st166949/hardware-interface-fm
-```
-```
 cd catkin_ws/src/
 ```
+```
+git clone https://github.tik.uni-stuttgart.de/st166949/hardware-interface-fm
+```
+
 * NOTE: Its name should be "hardware-interface-fm". Inside this folder, you will find a "panda_gazebo_physical" with a "src" file inside where Moveit and librealsense should be 	installed 
  
 ```
@@ -132,6 +133,7 @@ d. Now, you can move the robot directly from RViz or you can execute your own py
 
 e. To test programmatic control of the robot, you can run the file "hw_interface_test.py" to test the execution of all the commands in the hardware-abstraction-layer API
  
+f. Another program to test programmatic control of the robot upon, you can run the file "pyramid_code.py" to build a stack of three objects on top of each other.
 
 
 
