@@ -1,0 +1,6 @@
+<launch>
+  
+  <node name="bot" pkg="turtlebot_architecture" type="GoalSender.py" output="screen"/>
+  <node name="APF" pkg="turtlebot_architecture" type="APF.py" output="screen"/>
+  <node name="P2P" pkg="turtlebot_architecture" type="P2P.py" output="screen"/>
+</launch>
