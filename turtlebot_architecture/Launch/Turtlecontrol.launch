@@ -1,4 +1,0 @@
-<launch>
-  <node name="APF" pkg="turtlebot_architecture" type="APF.py" output="screen"/>
-  <node name="P2P" pkg="turtlebot_architecture" type="P2P.py" output="screen"/>
-</launch>
