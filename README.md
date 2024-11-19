@@ -30,7 +30,7 @@ This documentation provides a complete guide for setting up, simulating, and ope
 
 Before installing the Turtlebot3 related packages, make sure that ROS Noetic is already installed.
 
-Open the terminal with Ctrl+Alt+T and enter below commands one at a time
+Open the terminal with (`Ctrl` + `Alt` + `T`) and enter below commands one at a time
 
 ### 1. Turtlebot3 ROS Packages Installation
 
@@ -45,6 +45,26 @@ sudo apt install ros-noetic-turtlebot3-msgs
 ```bash
 sudo apt install ros-noetic-turtlebot3
 ```
+
+````bash
+cd ~/catkin_ws/src/
+````
+
+````bash
+git clone https://github.com/ROBOTIS-GIT/turtlebot3_manipulation_simulations.git
+````
+
+````bash
+git clone https://github.com/ROBOTIS-GIT/open_manipulator_dependencies.git
+````
+
+````bash
+sudo apt install ros-noetic-ros-control* ros-noetic-control* ros-noetic-moveit*
+````
+
+````bash
+cd ~/catkin_ws && catkin_make
+````
 
 ### 2. Turtlebot3 Setup
 
